@@ -1,7 +1,12 @@
 body{
     margin:0px;
     font-family:sans-serif;
-    color: white;
+}
+h1{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 #p1,#p2,#p3,#p4{
     width: 300px;
@@ -14,7 +19,7 @@ body{
     background-color: #822861;
 }
 #p3{
-    background-color: #A826A4;
+    background-color: #FAD834;
 }
 #p4{
     background-color: #F96D25;
@@ -22,7 +27,7 @@ body{
 #cont{
     display: flex;
     justify-content:center;
-    padding: 20px;
+    padding: 30px;
 }
 #linea1{
     display: flex;
@@ -30,6 +35,7 @@ body{
     flex-wrap: nowrap;
     justify-content:center;
     text-align: center;
+    color: white;
 }
 #linea2{
     display: flex;
@@ -37,6 +43,7 @@ body{
     flex-wrap: nowrap;
     justify-content:center;
     text-align: center;
+    color: white;
 }
 
 @media screen and (max-width: 1000px){
