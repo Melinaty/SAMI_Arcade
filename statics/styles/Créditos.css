@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Grande';
+    src: url('../fonts/m23_hydrant_special/m23.TTF');
+}
 body{
     margin:0px;
     font-family:sans-serif;
@@ -11,6 +15,7 @@ body{
     padding-top: 20px;
 }
 h1{
+    font-family: 'Grande';
     color: black;
     height: 35px;
     width: 279px;
@@ -25,6 +30,7 @@ h1{
     border-radius: 8px;
 }
 h2{
+    font-family: 'Grande';
     color: black;
     height: 23px;
     width: 280px;
@@ -118,6 +124,7 @@ h2{
     filter: brightness(0.9);
 }
 #raya{
+    font-family: 'Grande';
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -126,10 +133,16 @@ h2{
     color: white;
 }
 #morado{
+    font-family: 'Grande';
     width: 100%;
     display: flex;
+    color: white;
+    font-size: medium;
+    padding-top: 0px;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
-#morado div{
+#morado h3{
     text-align: center;
     width: 180px;
     height: 30px;
@@ -137,11 +150,9 @@ h2{
     padding-left: 20px;
     box-sizing: border-box;
     background-color: #822861;
-    color: white;
-}
-#morado div{
-    background-size:cover ;
-    filter: brightness(0.9);
+    font-size: medium;
+    padding-top: 5px;
+    border-radius: 8px;
 }
 #n1, #n2, #n3, #n4{
     position: absolute;
@@ -149,7 +160,8 @@ h2{
     width: 250px;
     background-color: #F96D25;
     z-index: 3;
-    top: 96%
+    top: 96%;
+    border-radius: 8px;
 }
 #n1{
     left: 2.97%;
@@ -170,8 +182,17 @@ h2{
         flex-wrap: nowrap;
         align-items: center;
     }
-    #p1,#p2,#p3,#p4{
-        width: 300px;
-        height: 150px;
+    #fotos, #naranja{
+        display: none;
+    }
+    #morado{
+        display: flex;
+        flex-direction:column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    #morado h3{
+        padding-left: 2px;
     }
 }
