@@ -1,0 +1,169 @@
+@font-face {
+    font-family: "Shadow";
+    src: url("../fonts/Deep\ Shadow.ttf");
+}
+/* =body----------------------------------------------------------------------- */
+
+body{
+    background-color: rgb(0, 0, 0);
+}
+
+#muestra{
+    position:absolute;
+    top:45%;
+    left: 35%;
+    z-index: 2;
+    color:#A826A4;
+    display: none;
+}
+div{
+    font-family:"Shadow";
+    font-size:60px;
+    padding-top: 0px;
+    margin: 0;
+}
+#sami{
+    position: absolute;
+    font-size:70px;
+    text-align: center;
+    top:-200px;
+    color: #F96D25;
+}
+#muestraSami{
+    font-size:70px;
+    position: absolute;
+    top:21.5%;
+    left:38%;
+    color: #FAD834;
+    display: none;
+}
+.samibaja{
+    animation: sami 2.5s ease 1;
+}
+.blur{
+    animation: blur 2s ease-out infinite;
+    text-shadow:0px 1px 6px transparent,
+        0px 1px 5px rgb(211, 228, 228);
+}
+#a1{
+    position: absolute;
+    left: -200px;
+    padding: 0px;
+    color: #F96D25;
+    animation: moverA1 2s linear 1;
+
+}
+#r{
+    position: absolute;
+    top: -200px;
+    color :#A826A4;
+    animation: moverR 2s linear 1;
+}
+#c{
+    position: absolute;
+    left: -200px;
+    
+    color: #F5464A;
+    animation: moverC 2s linear 1;
+
+}
+#a2{
+    position: absolute;
+    left: -200px;
+    color: #FAD834;
+
+    animation: moverA2 2s linear 1;
+}
+#d{
+    position: absolute;
+    left: -200px;
+    color: #F96D25;
+    animation: moverD 2s linear 1;
+
+}
+#e{
+    position: absolute;
+    left: -200px;
+    color:#822861;
+    animation: moverE 2s linear 1;
+
+}
+
+@keyframes moverA1 {
+    from{
+        margin-left: 100%;
+        margin-top: 45%;
+    }
+    to{
+        margin-left: 49%;
+        margin-top:21%;
+    }
+}
+@keyframes moverR {
+    from{
+        margin-right: 100%;
+        margin-top: 45%;
+    }
+    to{
+        margin-left: 40%;
+        margin-top:36%;
+    }
+}
+@keyframes moverC {
+    from{
+        margin-top: 0%;
+        margin-left: 60%;
+    }
+    to{
+        margin-left: 60%;
+        margin-top:21%;
+    }
+}
+@keyframes moverA2 {
+    from{
+        margin-left: 100%;
+        margin-top: 0%;
+    }
+    to{
+        margin-left: 65%;
+        margin-top:21%;
+    }
+}
+@keyframes moverD {
+    from{
+        margin-left: 50%;
+        margin-bottom: 50%;
+    }
+    to{
+        margin-left: 70%;
+        margin-top:21%;
+    }
+}
+@keyframes moverE {
+    from{
+        margin-left: 74.5%;
+        margin-top: 45%;
+    }
+    to{
+        margin-left: 74.5%;
+        margin-top:21%;
+    }
+}
+@keyframes sami{
+    from {
+        margin-left: 37.5%;
+        margin-top: 0%;
+    }
+    to {
+        margin-left: 37.5%;
+        margin-top:25%;
+    }
+  }
+
+  
+  @keyframes blur{
+    from{
+        text-shadow:
+        0px 1px 6px pink;
+        }
+  }
