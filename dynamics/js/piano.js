@@ -138,7 +138,7 @@ function jugar(carril, flotante){
         audio = new Audio(audios[num_audio]);
         audio.play();
         teclas_rand[num_audio]=flotante;
-        vel+=0.02;
+        vel+=0.03;
         num_audio++;
         if(num_audio == TECLAS[song_rand])
         {
