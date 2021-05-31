@@ -2,11 +2,15 @@
 let canvas = document.getElementById("piano");
 let ctx = canvas.getContext("2d");
 
+let fallo = false; //Variable que nos permite saber si fallamos y detener la animacion.
+
 //AUDIO Y ARREGLO DE TECLAS RANDOM --------------------------------------------------------------------------------
 //Constantes de los audios.
 const CANCION = ["rondo", "rondo", "rondo"]; //Almacena el nombre de las canciones.
 let song_rand = Math.floor(Math.random()*10) % 3; //Variable que elije una cancion al azar.
 let audios =  new Array(); //Arreglo que va a almacenar las rutas de los distintos audios de cada cancion.
+let num_audio = 0; //Variable de control que permite recorrer el arreglo con las rutas.
+let audio; //Variable de objeto audio.
 
 const TECLAS = [56, 56, 56] //Almacena la canctidad de teclas (archivos) que tiene cada cancion.
 let tecla = {
@@ -28,12 +32,44 @@ for(let i=1; i<=TECLAS[song_rand]; i++)
 
 //FUNCIONES -------------------------------------------------------------------------------------------------------
 
+function fin(){
+    fallo=true;
+    audio = new Audio("../statics/media/piano_songs/fallo.mp3");
+    audio.play();
+    setTimeout(()=>{
+        derrota();
+    }, 50);
+}
+
 //Funcion que determina si un numero es entero o flotante.
 function entero(n) { 
     if (n % 1 === 0)
         return true;
     else
         return false;
+}
+
+function victoria(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+        ctx.moveTo(75, 97.5)
+        ctx.lineTo(75, 35);
+        ctx.lineTo(125, 60);
+        ctx.lineTo(150, 22.5);
+        ctx.lineTo(175, 60);
+        ctx.lineTo(225, 35);
+        ctx.lineTo(225, 97.5);
+    ctx.closePath();
+    ctx.fillStyle= "gold";
+    ctx.fill();
+}
+
+function derrota(){
+    ctx.beginPath();
+        ctx.font = "bold 30px Verdana";
+        ctx.fillStyle="red";
+        ctx.fillText("（︶︿︶）", canvas.width/4, canvas.height/2);
+    ctx.closePath();
 }
 
 function basePian(){
@@ -51,24 +87,29 @@ function basePian(){
 function dib_teclas(carril, y){
     for(i=0; i<=TECLAS[song_rand]; i++)
     {
+        //cuando presionas una tecla negra correctamente se vuelve gris.
         if(entero(carril[i]) == false){
-            ctx.beginPath();
+        ctx.beginPath();
             ctx.rect(canvas.width/4*carril[i]*10, canvas.height-((i+1)*tecla.alto)+y, canvas.width/4,canvas.height/4);
             ctx.fillStyle="gray";
             ctx.strokeStyle = "white";
             ctx.stroke();
             ctx.fill();
-            ctx.closePath();
+        ctx.closePath();
         }
-        else{
-            ctx.beginPath();
+        //dibuja las teclas negras mientras la localidad sea un entero y no toque el borde inferior
+        else if(entero(carril[i]) == true && (canvas.height-((i+1)*tecla.alto)+y <= canvas.height-tecla.alto)){
+        ctx.beginPath();
             ctx.rect(canvas.width/4*carril[i], canvas.height-((i+1)*tecla.alto)+y, canvas.width/4, canvas.height/4);
             ctx.fillStyle="black";
             ctx.strokeStyle = "white";
             ctx.stroke();
             ctx.fill();
-            ctx.closePath();
+        ctx.closePath();
         }
+        //detiene la animación porque tocó el borde inferior(perdiste)
+        else
+            fin();
     }
 }
 
@@ -92,6 +133,25 @@ function tabla(){
     ctx.stroke();
 }
 
+function jugar(carril, flotante){
+    if(teclas_rand[num_audio]==carril){
+        audio = new Audio(audios[num_audio]);
+        audio.play();
+        teclas_rand[num_audio]=flotante;
+        vel+=0.02;
+        num_audio++;
+        if(num_audio == TECLAS[song_rand])
+        {
+            setTimeout(()=>{
+                cancelAnimationFrame(animacion);
+                victoria();
+            }, 500);
+        }
+    }
+    else
+        fin(); 
+}
+
 //Variable que controla como van bajando las teclas, se incializa una tecla antes de la que es.
 let y = -tecla.alto;
 
@@ -108,14 +168,11 @@ function draw(){
     dib_teclas(teclas_rand, y);
     tabla();
     y+=1+vel; //VELOCIDAD
-    animacion = requestAnimationFrame(draw);
+    if(fallo == false)
+        animacion = requestAnimationFrame(draw);
+    else
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
-
-//requestAnimationFrame(draw);
-let audio;
-let num_audio = 0;
-let fallo = false;
-
 
 //EVENTOS DEL TECLADO --------------------------------------------------------------------------
 $("#duracion").click(()=>{
@@ -128,75 +185,21 @@ $("#duracion").click(()=>{
             switch(e.key)
             {
                 case 'a':
-                //Se crea un nuevo audio, con la ruta especificada.
-                if(teclas_rand[num_audio]==0){
-                    audio = new Audio(audios[num_audio]);
-                    teclas_rand[num_audio]=0.0000000000000000000001;
-                    num_audio++;
-                    vel+=0.05;
-
-                }
-                else{
-                    fallo = true;
-                    audio = new Audio("../statics/media/piano_songs/fallo.mp3");
-                    cancelAnimationFrame(animacion);
-                }
-                //audio.play();
-                console.log(e.key);
+                jugar(0,0.0000000000000000000000000000000001);
                 break;
 
                 case 's':
-                //Se crea un nuevo audio, con la ruta especificada.
-                if(teclas_rand[num_audio]==1){
-                    audio = new Audio(audios[num_audio]);
-                    teclas_rand[num_audio]=0.1;
-                    num_audio++;
-                    vel+=0.05;
-                }
-                else{
-                    fallo = true;
-                    audio = new Audio("../statics/media/piano_songs/fallo.mp3");
-                    cancelAnimationFrame(animacion);
-                }
-                //audio.play();
-                console.log(e.key);
+                jugar(1,0.1);
                 break;
 
                 case 'd':
-                //Se crea un nuevo audio, con la ruta especificada.
-                if(teclas_rand[num_audio]==2){
-                    audio = new Audio(audios[num_audio]);
-                    teclas_rand[num_audio]=0.2;
-                    num_audio++;
-                    vel+=0.05;
-                }
-                else{
-                    fallo = true;
-                    audio = new Audio("../statics/media/piano_songs/fallo.mp3");
-                    cancelAnimationFrame(animacion);
-                }
-                //audio.play();
-                console.log(e.key);
+                jugar(2,0.2);
                 break;
 
                 case 'f':
-                //Se crea un nuevo audio, con la ruta especificada.
-                if(teclas_rand[num_audio]==3){
-                    audio = new Audio(audios[num_audio]);
-                    teclas_rand[num_audio]=0.3;
-                    num_audio++;
-                    vel+=0.05;
-                }
-                else{
-                    fallo = true;
-                    audio = new Audio("../statics/media/piano_songs/fallo.mp3");
-                    cancelAnimationFrame(animacion);
-                }
-                //audio.play();
-                console.log(e.key);
+                jugar(3,0.3);
                 break;
             }
-            audio.play();
         }
     });
 });
