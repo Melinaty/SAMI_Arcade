@@ -11,9 +11,9 @@ let fallo;
 //AUDIO Y ARREGLO DE TECLAS RANDOM --------------------------------------------------------------------------------
 //Constantes de los audios.
 const CANCION = ["wetH", "rondo", "bumblebee"]; //Almacena el nombre de las canciones.
-let song_rand = Math.floor(Math.random()*10) % 3; //Variable que elije una cancion al azar.
+let songRand; //Variable que elije una cancion al azar.
 let audios; //Arreglo que va a almacenar las rutas de los distintos audios de cada cancion.
-let num_audio; //Variable de control que permite recorrer el arreglo con las rutas.
+let numAudio; //Variable de control que permite recorrer el arreglo con las rutas.
 let audio; //Variable de objeto audio.
 let rand; //Variable que cambiara su valor de una forma random del 0 al 3.
 
@@ -22,28 +22,29 @@ let tecla = {
     alto: canvas.height/4,
     ancho: canvas.width/4
 }
-let teclas_rand;  //Arreglo que almacena las pociciones random de las teclas.
+let teclasRand;  //Arreglo que almacena las pociciones random de las teclas.
 
 //FUNCIONES -------------------------------------------------------------------------------------------------------
 function inicializar (){
+    songRand = Math.floor(Math.random()*10) % 3; 
     audios= new Array();
-    teclas_rand= new Array();
-    num_audio=0;
+    teclasRand= new Array();
+    numAudio=0;
     vel=0;
     y = - tecla.alto
     fallo = false;
-    for(let i=1; i<=TECLAS[song_rand]; i++)
+    for(let i=1; i<=TECLAS[songRand]; i++)
     {  
         rand = Math.round(Math.random()*3);
         //Se guarda en el arreglo las rutas completas con cada audio.
-        audios.push('../statics/media/piano_songs/'+CANCION[song_rand]+'/'+CANCION[song_rand]+'('+i+').mp3');
+        audios.push('../statics/media/piano_songs/'+CANCION[songRand]+'/'+CANCION[songRand]+'('+i+').mp3');
 
         //Crea las posiciones de las teclas de forma randomizada del 0 al 3.
-        teclas_rand.push(rand);
+        teclasRand.push(rand);
     }
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     basePian();
-    dib_teclas(teclas_rand, y);
+    dibTeclas(teclasRand, y);
     tabla();
 }
 
@@ -113,8 +114,8 @@ function basePian(){
 }
 
 //Funcion que dibuja las teclas con sus posiciones random, ademas de dibujas en gris las que ya se pulsaron.
-function dib_teclas(carril, y){
-    for(i=0; i<=TECLAS[song_rand]; i++)
+function dibTeclas(carril, y){
+    for(i=0; i<=TECLAS[songRand]; i++)
     {
         //cuando presionas una tecla negra correctamente se vuelve gris.
         if(entero(carril[i]) == false){
@@ -165,15 +166,15 @@ function tabla(){
 
 //Funcion que permite comprobar si presionaste la teclaa correcta, y reproduce el sonido.
 function jugar(carril, flotante){
-    if(teclas_rand[num_audio]==carril){
-        audio = new Audio(audios[num_audio]);
+    if(teclasRand[numAudio]==carril){
+        audio = new Audio(audios[numAudio]);
         audio.play();
-        teclas_rand[num_audio]=flotante;
+        teclasRand[numAudio]=flotante;
         vel+=0.03;
-        num_audio++;
-        puntaje(num_audio,vel);
+        numAudio++;
+        puntaje(numAudio,vel);
         //Si llegas al final, cancela la animacion y ejecuta la victoria.
-        if(num_audio == TECLAS[song_rand])
+        if(numAudio == TECLAS[songRand])
         {
             setTimeout(()=>{
                 cancelAnimationFrame(animacion);
@@ -194,7 +195,7 @@ let animacion;
 function draw(){
     console.log("Sigue animacion");
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    dib_teclas(teclas_rand, y);
+    dibTeclas(teclasRand, y);
     tabla();
     y+=1+vel; //VELOCIDAD
     if(fallo == false)
