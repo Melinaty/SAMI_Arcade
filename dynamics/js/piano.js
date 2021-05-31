@@ -139,7 +139,6 @@ function jugar(carril, flotante){
         audio.play();
         teclas_rand[num_audio]=flotante;
         vel+=0.03;
-        console.log(audios[num_audio]);
         num_audio++;
         if(num_audio == TECLAS[song_rand])
         {
