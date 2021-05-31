@@ -6,13 +6,13 @@ let fallo = false; //Variable que nos permite saber si fallamos y detener la ani
 
 //AUDIO Y ARREGLO DE TECLAS RANDOM --------------------------------------------------------------------------------
 //Constantes de los audios.
-const CANCION = ["rondo", "rondo", "rondo"]; //Almacena el nombre de las canciones.
+const CANCION = ["rondo", "wetH", "wetH"]; //Almacena el nombre de las canciones.
 let song_rand = Math.floor(Math.random()*10) % 3; //Variable que elije una cancion al azar.
 let audios =  new Array(); //Arreglo que va a almacenar las rutas de los distintos audios de cada cancion.
 let num_audio = 0; //Variable de control que permite recorrer el arreglo con las rutas.
 let audio; //Variable de objeto audio.
 
-const TECLAS = [56, 56, 56] //Almacena la canctidad de teclas (archivos) que tiene cada cancion.
+const TECLAS = [56, 58, 58] //Almacena la canctidad de teclas (archivos) que tiene cada cancion.
 let tecla = {
     alto: canvas.height/4,
     ancho: canvas.width/4
@@ -139,6 +139,7 @@ function jugar(carril, flotante){
         audio.play();
         teclas_rand[num_audio]=flotante;
         vel+=0.03;
+        console.log(audios[num_audio]);
         num_audio++;
         if(num_audio == TECLAS[song_rand])
         {
