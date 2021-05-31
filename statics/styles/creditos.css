@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'Grande';
-    src: url('../fonts/m23_hydrant_special/m23.TTF');
-}
 body{
     margin:0px;
     font-family:sans-serif;
@@ -112,11 +108,11 @@ h2{
     order:2;
 }
 #fotos div:nth-child(3){
-    background-image: url(../img/fotos/mauricio.jpeg);
+    background-image: url(../img/fotos/sergio.jpg);
     order: 3;
 }
 #fotos div:nth-child(4){
-    background-image: url(../img/fotos/mauricio.jpeg);
+    background-image: url(../img/fotos/melisa.jpg);
     order: 4;
 }
 #fotos div{
