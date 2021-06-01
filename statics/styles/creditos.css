@@ -123,7 +123,7 @@
         flex-wrap: nowrap;
         align-items: center;
     }
-    #fotos, #naranja{
+    #fotos{
         display: none;
     }
     #morado{
