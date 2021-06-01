@@ -1,3 +1,4 @@
+/*=fonts----------------------------------------------------------------------------------------------------------------*/
 @font-face {
     font-family: "Shadow";
     src: url("../fonts/Deep\ Shadow.ttf");
@@ -87,17 +88,38 @@ div{
     animation: moverE 2s linear 1;
 
 }
+#muestraizq{
+  padding: 0%;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  width: 30%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+#muestrader{
+  padding:0%;
+  position: absolute;
+  left: 85%;
+  top: 50%;
+  width: 30%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
 
 button{
     font-family:"m23";
     position: absolute;
-    left: 45%;
+    left: 50%;
     top: 75%;
     border:none;
     border-radius: 1em 0 1em 0;
     width: 120px;
     height: 60px;
     background-color: #F5464A;
+    transform: translate(-50%, -50%);
     display: none;
 }
 button:hover{
@@ -105,7 +127,9 @@ button:hover{
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     color: white;
 }
-
+.none{
+  display: none;
+}
 @keyframes moverA1 {
     from{
       top: 0%;
@@ -190,10 +214,33 @@ button:hover{
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-  @keyframes blur{
+}
+@keyframes blur{
     from{
         text-shadow:
         0px 1px 6px pink;
         }
-  }
+}
+
+/* =Mquery
+    -----------------------------------------------*/
+    @media screen and (max-width:700px){
+      #muestrader{
+        left: -100%;
+        display: block;
+      }
+      #muestraizq{
+        left: -100%;
+        display: block;
+      }
+      div{
+          font-size:40px;
+      }
+      #sami{
+          font-size:50px;
+      }
+      #muestraSami{
+        font-size:50px;
+    
+      }
+    }

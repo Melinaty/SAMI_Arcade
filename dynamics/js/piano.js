@@ -7,6 +7,7 @@ let y; //Variable que controla como van bajando las teclas, se incializa una tec
 let vel;
 //Variable que nos permite saber si fallamos y detener la animacion.
 let fallo; 
+let colorito="black";
 
 //AUDIO Y ARREGLO DE TECLAS RANDOM --------------------------------------------------------------------------------
 //Constantes de los audios.
@@ -131,7 +132,7 @@ function dibTeclas(carril, y){
         else if(entero(carril[i]) == true && (canvas.height-((i+1)*tecla.alto)+y <= canvas.height-tecla.alto)){
         ctx.beginPath();
             ctx.rect(canvas.width/4*carril[i], canvas.height-((i+1)*tecla.alto)+y, canvas.width/4, canvas.height/4);
-            ctx.fillStyle="black";
+            ctx.fillStyle=colorito;
             ctx.strokeStyle = "white";
             ctx.stroke();
             ctx.fill();
@@ -170,9 +171,14 @@ function jugar(carril, flotante){
         audio = new Audio(audios[numAudio]);
         audio.play();
         teclasRand[numAudio]=flotante;
-        vel+=0.03;
-        numAudio++;
+        if(dificultad=="F")
+            vel+=0.01;
+        if(dificultad=="M")
+            vel+=0.03;
+        if(dificultad=="D")
+            vel+=0.05;
         puntaje(numAudio,vel);
+        numAudio++;
         //Si llegas al final, cancela la animacion y ejecuta la victoria.
         if(numAudio == TECLAS[songRand])
         {
@@ -193,7 +199,6 @@ inicializar();
 //ANIMACIONES ----------------------------------------------------------------------------------
 let animacion;
 function draw(){
-    console.log("Sigue animacion");
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     dibTeclas(teclasRand, y);
     tabla();
@@ -206,7 +211,8 @@ function draw(){
 
 //Evento de boton de reintentar. 
 reintentar.click(()=>{
-    console.log("boton reintentar");
+    colorito= document.getElementById("color").value;
+    dificultad=document.getElementById("dificultad").value;
     reintentar.hide();
     inicializar();
     setTimeout(()=>{
@@ -216,6 +222,8 @@ reintentar.click(()=>{
 
 //Evento de boton de jugar.
 $("#empezar").click(()=>{
+    colorito= document.getElementById("color").value;
+    dificultad=document.getElementById("dificultad").value;
     $("#empezar").hide();
     draw();
 
