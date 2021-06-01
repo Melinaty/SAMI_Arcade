@@ -70,7 +70,7 @@ a{
 
 /*=ADAPTABILIDAD
 ---------------------------------------------*/
-@media screen and (max-width: 1330px){
+@media screen and (max-width: 1200px){
     #cont{
         display: flex;
         flex-direction:column;
