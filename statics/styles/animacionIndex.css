@@ -89,6 +89,7 @@ div{
 }
 
 button{
+    font-family:"m23";
     position: absolute;
     left: 45%;
     top: 75%;
