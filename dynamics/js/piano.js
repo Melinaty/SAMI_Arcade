@@ -7,7 +7,7 @@ let y; //Variable que controla como van bajando las teclas, se incializa una tec
 let vel;
 //Variable que nos permite saber si fallamos y detener la animacion.
 let fallo; 
-let colorito;
+let colorito="black";
 
 //AUDIO Y ARREGLO DE TECLAS RANDOM --------------------------------------------------------------------------------
 //Constantes de los audios.
