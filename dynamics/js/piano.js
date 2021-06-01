@@ -184,6 +184,7 @@ function jugar(carril, flotante){
         {
             setTimeout(()=>{
                 cancelAnimationFrame(animacion);
+                reintentar.show();
                 victoria();
             }, 500);
         }
