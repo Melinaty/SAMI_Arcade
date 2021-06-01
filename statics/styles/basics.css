@@ -1,10 +1,93 @@
-
+/*=FUENTES
+---------------------------------------------*/
+/*ESPECIALES*/
 @font-face {
-    font-family: 'Grande';
-    src: url('../fonts/m23_hydrant_special/m23.TTF');
+    font-family:"m23";
+    src: url("../fonts/m23.TTF");
 }
-
+/*=COLORES
+---------------------------------------------*/
+:root{
+    --rojo: #F54644;
+    --amarillo: #FAD834;
+    --naranja: #F96D25;
+    --morado2: #822861;
+    --morado1: #A826A4;
+    --blanco: white;
+}
 body{
-    background-color: black;
+    background-color: #242222;
     margin: 0;
 }
+
+h1{
+    font-family:"m23";
+}
+h2{
+    font-family:"m23";
+}
+#trofeo{
+    width: 45px;
+    height: 45px;
+}
+#SAMI{
+    font-family:"m23";
+    font-size:32px;
+    color: white;
+}
+.barra{
+    font-size:32px;
+    margin-bottom: 0%;
+}
+#SAMI:hover{
+    color: var(--amarillo);
+}
+.barra:hover,i:hover, #boton:hover{
+    color: white;
+}
+#logo:hover{
+    width: 50px;
+    height: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#titulo{
+    font-size:50px;
+
+    height: 70px;
+    width: 538px;
+    padding-top: 5px;
+    background-color: var(--naranja);
+    border-radius: 10px;
+
+    grid-column-start: 8;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 1; 
+    text-align: center;
+}
+.subtitulo{
+    font-size: 32px;
+
+    height: 49px;
+    width: 513px;
+    background-color: var(--amarillo);
+    border-radius: 10px;
+
+    text-align: center;
+}
+#logo{
+    width: 45px;
+    height: 45px;
+}
+#footer{
+    bottom: 100%;
+    font-family: "m23";
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: var(--rojo);
+    color: white;
+}
+

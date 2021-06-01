@@ -6,32 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../statics/img/icon/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../libs/fontawesome-free-5.15.3-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../statics/styles/basics.css">
     <link rel="stylesheet" href="../statics/styles/creditos.css">
+    <script src="../libs/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+    <script src="../libs/jquery/jquery-3.6.0.min.js"></script>
     <title>Créditos</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Principal</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Juegos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Créditos</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+  <nav id="navbar" class="navbar navbar-expand-xl navbar-light bg-danger"  style="padding: 0px;">
+    <div class="container-xxl">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html"><img src="../statics/img/icon/favicon.png" alt="Logo Sami Arcade" id="logo"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html" style="padding-right: 0px; padding-bottom: 0px;margin-right: 0px;"><h1  id="SAMI">S A M I</h1></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../templates/games.html" style="padding-right: 0px; padding-bottom: 0px; margin-left: 50px;"><i class="fas fa-gamepad fa-2x"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../templates/games.html"  style="padding-right: 0px;  padding-bottom: 0px;  "><h1 class="barra">Juegos</h1></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../templates/puntajes.html" style="padding-right: 0px;  padding-bottom: 0px;margin-left: 50px; "><i class="fas fa-trophy fa-2x"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../templates/puntajes.html" style="padding-left: 6px;  padding-bottom: 0px;  "><h1 class="barra">Puntajes</h1></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="padding-right: 0px;  padding-bottom: 0px; margin-left: 50px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-cogs fa-2x"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"  style="padding-right: 0px;  padding-bottom: 0px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><h1 class="barra">Ajustes</h1></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
     <div id="cont">
+<<<<<<< HEAD
       <h1>CREDITOS</h1>
       <h2 id="piano">PIANO TILES</h2>
         <div id="c1">
@@ -50,25 +74,49 @@
           <p>Melissa----Irandy</p>
         </div>
       <h2 id="programadores">PROGRAMADORES</h2>
+=======
+      <h1 id="titulo">CREDITOS</h1>
+      <h2 class="subtitulo" id="piano">PIANO TILES</h2>
+      <div id="c1"></div>
+      <h2 class="subtitulo"id="trivia">TRIVIA</h2>
+      <div id="c2"></div>
+      <h2 class="subtitulo" id="diseño">DESIGN</h2>
+      <div id="c3"></div>
+      <h2 class="subtitulo" id="programadores">PROGRAMADORES</h2>
+>>>>>>> 82a1aa7ddfe9ec1b98a08717d6a0b8af772c53fc
     </div>
+
     <div id="fotos">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div id="imgi">
+        <img src="../statics/img/fotos/irandy.jpeg" alt="Irandy" >
+      </div>
+      <div  id="imgm">
+        <img src="../statics/img/fotos/mauricio.jpeg" alt="Mauricio">
+      </div>
+      <div id="imgs">
+        <img src="../statics/img/fotos/sergio.jpg" alt="Sergio" >
+      </div>
+      <div id="imgme">
+        <img src="../statics/img/fotos/melisa.jpg" alt="Melissa" >
+      </div>
     </div>
+    
     <div id="morado">
       <h3 id="i">Irandy</h3>
       <h3 id="m">Mauricio</h3>
       <h3 id="s">Sergio</h3>
       <h3 id="me">Melissa</h3>
+<<<<<<< HEAD
     </div>
     <div id="naranja">
       <div id="n1"></div>
       <div id="n2"></div>
       <div id="n3"></div>
       <div id="n4"></div>
+=======
+>>>>>>> 82a1aa7ddfe9ec1b98a08717d6a0b8af772c53fc
     </div>
-  <div id="raya">SAMI</div>
+
+    <div id="footer">SAMI</div>
 </body>
 </html>
