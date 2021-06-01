@@ -7,6 +7,16 @@
 body{
     background-color: rgb(0, 0, 0);
 }
+#imgizq{
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  width: 30%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
 #muestra{
     position: absolute;
     color: #A826A4;
@@ -87,7 +97,6 @@ div{
     animation: moverE 2s linear 1;
 
 }
-
 button{
     position: absolute;
     left: 45%;
@@ -189,10 +198,10 @@ button:hover{
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-  @keyframes blur{
+}
+@keyframes blur{
     from{
         text-shadow:
         0px 1px 6px pink;
         }
-  }
+}
