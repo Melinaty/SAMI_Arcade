@@ -1,22 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../statics/img/icon/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../statics/styles/basics.css">
     <link rel="stylesheet" href="../statics/styles/piano.css">
     <script src="../libs/jquery/jquery-3.6.0.min.js"></script>
     <title>PianoTiles</title>
 </head>
 <body>
     <div id="juego">
-        <h1 id="tituloJuego">Piano Keys</h1>
-        <span id="puntos">0</span>
-        <canvas id="piano"></canvas>
-        <button id="empezar" tabindex="1">Jugar</button>
-        <button id="reintentar">Jugar de nuevo</button>
-        <script src="../dynamics/js/piano.js"></script>
+        <h1 id="tituloJuego">Piano</h1> 
+        <h1 id="prueba">Keys</h1>
+        <div id="opciones">
+            <div id="interno">
+                <canvas id="piano"></canvas>
+            </div>
+            <div id="config">
+                <button id="empezar" tabindex="1">JUGAR</button>
+                <button id="reintentar">JUGAR DE NUEVO</button>
+                <div id="puntuacion">
+                    <h3>PUNTUACION</h3>
+                    <span id="puntos">0</span>
+                </div>
+                <label for="input">
+                    <h4>Selecciona un color</h4>
+                    <input type="color" name="color" id="color">
+                </label>
+                <label for="input">
+                    <h4>Dificultad</h4>
+                    <select id="dificultad">
+                        <option value="F">Fácil</option>
+                        <option value="M">Medio</option>
+                        <option value="D">Difícil</option>
+                    </select>
+                </label>
+                <label>
+                    <br><br><br>
+                    <a href="./games.html"><button id="regresar">Regresar</button></a>
+                </label>
+                <br><br>
+                <span id="teclas">Juega con A,S,D,F</span>
+            </div>
+            <script src="../dynamics/js/piano.js"></script>
+        </div>
     </div>
 </body>
 </html>
