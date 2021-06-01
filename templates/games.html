@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../statics/styles/basics.css">
     <link rel="stylesheet" href="../statics/styles/game.css">
+    <script src="../libs/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>
+    <script src="../libs/jquery/jquery-3.6.0.min.js"></script>
     <title>Juegos</title>
 </head>
     <body>
@@ -42,24 +44,49 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="padding-right: 0px;  padding-bottom: 0px; margin-left: 50px;"><i class="fas fa-cogs fa-2x"></i></a>
+                <a class="nav-link active" aria-current="page" href="#" style="padding-right: 0px;  padding-bottom: 0px; margin-left: 50px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-cogs fa-2x"></i></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"  style="padding-right: 0px;  padding-bottom: 0px;"><h1 class="barra">Ajustes</h1></a>
+                <a class="nav-link active" aria-current="page" href="#"  style="padding-right: 0px;  padding-bottom: 0px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><h1 class="barra">Ajustes</h1></a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-        <div id="cont">
-          <h1 id="titulo">SALA DE JUEGOS</h1>
-          <div id="cuadroJuego1"></div>
-          <h2 class="subtitulo" id="piano">PIANO TILES</h2>
-          <div id="cuadroJuego2"></div>
-          <h2 class="subtitulo"id="trivia">TRIVIA</h2>
-          <a href="../templates/creditos.html" id="boton" ><h1>CREDITOS</h1></a>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Configuración</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="nombreUsuario">
+              <div class="modal-body">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingEmail" placeholder="Nombre de usuario" aria-describedby="emailHelpBlock">
+                  <label for="floatingEmail">Usuario</label>
+                  <div id="emailHelpBlock" class="form-text">
+                    Introduce un nombre de usuario.
+                  </div>
+                </div>
+              </form>
+              </div><div class="modal-footer">
+                <!---<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>----->
+                <button id="submitPalUser" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+              </div>
+          </div>
         </div>
-        <div id="footer">SAMI</div>
+      </div>
+      <div id="cont">
+        <h1 id="titulo">SALA DE JUEGOS</h1>
+        <div id="cuadroJuego1"></div>
+        <h2 class="subtitulo" id="piano">PIANO TILES</h2>
+        <div id="cuadroJuego2"></div>
+        <h2 class="subtitulo"id="trivia">TRIVIA</h2>
+        <a href="../templates/creditos.html" id="boton" ><h1>CREDITOS</h1></a>
+      </div>
+      <div id="footer">SAMI</div>
+      <script src="../dynamics/js/script.js"></script>
     </body>
 </html>
