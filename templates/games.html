@@ -44,10 +44,10 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="padding-right: 0px;  padding-bottom: 0px; margin-left: 50px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-cogs fa-2x"></i></a>
+                <a id="iconAjust" class="nav-link active" aria-current="page" href="#" style="padding-right: 0px;  padding-bottom: 0px; margin-left: 50px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-cogs fa-2x"></i></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"  style="padding-right: 0px;  padding-bottom: 0px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><h1 class="barra">Ajustes</h1></a>
+                <a id="btnAjust" class="nav-link active" aria-current="page" href="#"  style="padding-right: 0px;  padding-bottom: 0px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><h1 class="barra">Ajustes</h1></a>
               </li>
             </ul>
           </div>
@@ -59,21 +59,17 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="staticBackdropLabel">Configuración</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <!---<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>----->
             </div>
-            <form id="nombreUsuario">
               <div class="modal-body">
-                <div class="form-floating">
-                  <input type="email" class="form-control" id="floatingEmail" placeholder="Nombre de usuario" aria-describedby="emailHelpBlock">
-                  <label for="floatingEmail">Usuario</label>
-                  <div id="emailHelpBlock" class="form-text">
-                    Introduce un nombre de usuario.
-                  </div>
-                </div>
-              </form>
-              </div><div class="modal-footer">
-                <!---<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>----->
-                <button id="submitPalUser" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                <label for="nomUsuario">Nombre de usuario</label><br>
+                <input id="nomUsuario" type="text" placeholder="Nombre de usuario" required>
+                <br>
+                <label for="paleta">Modo</label><br>
+                <button id="paleta" tabindex="0"><i class="fas fa-adjust fa-5x"></i></button>
+              </div>
+              <div class="modal-footer">
+                <button id="submitPalUser" class="btn btn-primary">Aceptar</button>
               </div>
           </div>
         </div>

@@ -52,6 +52,24 @@ a{
     text-decoration:none;
     color: black;
 }
+#paleta{
+    border:0;
+    background-color: transparent;
+}
+.modal-header{
+    background-color: var(--morado2);
+    color: white;
+}
+.modal-body{
+    background-color: var(--rojo);
+}
+.modal-footer{
+    background-color: var(--morado2);
+}
+#submitPalUser{
+    background-color: var(--amarillo);
+    color: black;
+}
 #boton{
     background-color: var(--morado2);
     height: 61px;
