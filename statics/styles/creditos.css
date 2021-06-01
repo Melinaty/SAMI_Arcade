@@ -53,6 +53,16 @@ h2{
     grid-row-start: 7;
     grid-row-end: 7;
 }
+#c1 p{
+    color: white;
+    background-color: #822861;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-left: 10px;
+}
 #trivia{
     grid-column-start: 13;
     grid-column-end: 13;
@@ -64,6 +74,16 @@ h2{
     grid-column-end: 13;
     grid-row-start: 7;
     grid-row-end: 7;
+}
+#c2 p{
+    color: white;
+    background-color: #822861;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-left: 10px;
 }
 #diseño{
     grid-column-start: 9;
@@ -80,6 +100,16 @@ h2{
     grid-row-end: 9;
     z-index: 1;
     height: 115px;
+}
+#c3 p{
+    color: white;
+    background-color: #822861;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-left: 10px;
 }
 #programadores{
     grid-column-start: 9;
