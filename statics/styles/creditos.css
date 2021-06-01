@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 body{
     margin:0px;
     font-family:sans-serif;
     background-color: black;
 }
-=======
-/*=Division General
----------------------------------------------*/
->>>>>>> 82a1aa7ddfe9ec1b98a08717d6a0b8af772c53fc
 #cont{
     display: grid;
     height: 700px;
@@ -32,7 +27,6 @@ body{
     grid-row-end:3;
 }
 #c1{
-<<<<<<< HEAD
     grid-column-start: 5;
     grid-column-end: 5;
     grid-row-start: 7;
@@ -51,10 +45,6 @@ body{
 #trivia{
     grid-column-start: 13;
     grid-column-end: 13;
-=======
-    grid-column-start: 4;
-    grid-column-end: 4;
->>>>>>> 82a1aa7ddfe9ec1b98a08717d6a0b8af772c53fc
     grid-row-start: 5;
     grid-row-end: 5;
 }
@@ -71,7 +61,6 @@ body{
     grid-row-start:5;
     grid-row-end:5;
 }
-<<<<<<< HEAD
 #c2 p{
     color: white;
     background-color: #822861;
@@ -82,9 +71,6 @@ body{
     flex-direction: row;
     padding-left: 10px;
 }
-=======
-
->>>>>>> 82a1aa7ddfe9ec1b98a08717d6a0b8af772c53fc
 #diseño{
     grid-column-start: 8;
     grid-column-end: 8;
@@ -99,7 +85,6 @@ body{
     grid-row-end: 11;
     z-index: 1;
 }
-<<<<<<< HEAD
 #c3 p{
     color: white;
     background-color: #822861;
@@ -110,9 +95,6 @@ body{
     flex-direction: row;
     padding-left: 10px;
 }
-=======
-
->>>>>>> 82a1aa7ddfe9ec1b98a08717d6a0b8af772c53fc
 #programadores{
     grid-column-start: 8;
     grid-column-end: 8;
