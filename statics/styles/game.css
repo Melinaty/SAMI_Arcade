@@ -9,7 +9,6 @@
 }
 .subtitulo{
     font-size: 32px;
-
     height: 49px;
     width: 478px;
     background-color: var(--amarillo);
@@ -32,7 +31,7 @@
 #cuadroJuego1{
     grid-column-start: 3;
     grid-column-end: 3;
-    grid-row-start: 3;
+    grid-row-start: 10;
     grid-row-end: 3;
 }
 
@@ -88,6 +87,9 @@ a{
 #boton>h1{
     padding-top: 5px;
 }
+.esconder{
+    z-index:2;
+}
 
 /*=ADAPTABILIDAD
 ---------------------------------------------*/
@@ -97,6 +99,9 @@ a{
         flex-direction:column;
         flex-wrap: nowrap;
         align-items: center;
+    }
+    .esconder{
+        display: none;
     }
 
 }
