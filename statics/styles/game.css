@@ -9,7 +9,6 @@
 }
 .subtitulo{
     font-size: 32px;
-
     height: 49px;
     width: 478px;
     background-color: var(--amarillo);
@@ -70,6 +69,9 @@ a{
     background-color: var(--amarillo);
     color: black;
 }
+#cambiarUser{
+    background-color: var(--naranja);
+}
 #boton{
     background-color: var(--morado2);
     height: 61px;
@@ -85,6 +87,9 @@ a{
 #boton>h1{
     padding-top: 5px;
 }
+.esconder{
+    z-index:2;
+}
 
 /*=ADAPTABILIDAD
 ---------------------------------------------*/
@@ -94,6 +99,9 @@ a{
         flex-direction:column;
         flex-wrap: nowrap;
         align-items: center;
+    }
+    .esconder{
+        display: none;
     }
 
 }

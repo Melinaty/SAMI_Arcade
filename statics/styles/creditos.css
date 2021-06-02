@@ -17,6 +17,21 @@
 }
 /*=Subtitulos & cuadros
 ---------------------------------------------*/
+#moradito1, #moradito2, #moradito3{
+    display: flex;
+    padding-top: 20px;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+}
+p{
+    background-color: #822861;
+    color: white;
+    width: 480px;
+    border-radius: 8px;
+    text-align: center;
+}
 #piano{
     grid-column-start:4;
     grid-column-end:4;
