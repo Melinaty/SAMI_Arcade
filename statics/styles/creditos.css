@@ -1,8 +1,5 @@
-body{
-    margin:0px;
-    font-family:sans-serif;
-    background-color: black;
-}
+/*=Division General
+---------------------------------------------*/
 #cont{
     display: grid;
     height: 700px;
@@ -20,6 +17,21 @@ body{
 }
 /*=Subtitulos & cuadros
 ---------------------------------------------*/
+#moradito1, #moradito2, #moradito3{
+    display: flex;
+    padding-top: 20px;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+}
+p{
+    background-color: #822861;
+    color: white;
+    width: 480px;
+    border-radius: 8px;
+    text-align: center;
+}
 #piano{
     grid-column-start:4;
     grid-column-end:4;
@@ -27,24 +39,8 @@ body{
     grid-row-end:3;
 }
 #c1{
-    grid-column-start: 5;
-    grid-column-end: 5;
-    grid-row-start: 7;
-    grid-row-end: 7;
-}
-#c1 p{
-    color: white;
-    background-color: #822861;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    padding-left: 10px;
-}
-#trivia{
-    grid-column-start: 13;
-    grid-column-end: 13;
+    grid-column-start: 4;
+    grid-column-end: 4;
     grid-row-start: 5;
     grid-row-end: 5;
 }
@@ -61,16 +57,7 @@ body{
     grid-row-start:5;
     grid-row-end:5;
 }
-#c2 p{
-    color: white;
-    background-color: #822861;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    padding-left: 10px;
-}
+
 #diseño{
     grid-column-start: 8;
     grid-column-end: 8;
@@ -85,16 +72,7 @@ body{
     grid-row-end: 11;
     z-index: 1;
 }
-#c3 p{
-    color: white;
-    background-color: #822861;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    padding-left: 10px;
-}
+
 #programadores{
     grid-column-start: 8;
     grid-column-end: 8;
