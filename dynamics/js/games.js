@@ -24,12 +24,12 @@ $(document).ready(()=>{
     //cuando ya existe la cookie le cambia el color  de fondo al que ya tenía antes
     function cambiarColor(){
         let colorAct = valCookie("activo", 2);
-        if(valCookie(colorAct, 2) == 'b')
+        if(valCookie(colorAct, 2).charAt(0) == 'b')
         {
             cookiePal = 'b';
             $("body").css("backgroundColor", "#d6d6d6"); 
         }
-        else if(valCookie(colorAct, 2) == 'n')
+        else if(valCookie(colorAct, 2).charAt(0) == 'n')
         {
             cookiePal='n';
            $("body").css("backgroundColor", "#242222");
@@ -82,7 +82,7 @@ $(document).ready(()=>{
                 stringCookie = valCookie(activa, 2);
                 stringCookie=stringCookie.replace(stringCookie.charAt(0), cookiePal);
                 console.log(cookiePal);
-                document.cookie=activa+"="+cookiePal+";expires="+fecha.toGMTString();
+                document.cookie=activa+"="+stringCookie+";expires="+fecha.toGMTString();
                 console.log(stringCookie);
             }    
         }
@@ -96,7 +96,7 @@ $(document).ready(()=>{
                 stringCookie = valCookie(activa, 2);
                 stringCookie=stringCookie.replace(stringCookie.charAt(0), cookiePal);
                 console.log(cookiePal);
-                document.cookie=activa+"="+cookiePal+";expires="+fecha.toGMTString();
+                document.cookie=activa+"="+stringCookie+";expires="+fecha.toGMTString();
                 console.log(stringCookie);
             }
         }

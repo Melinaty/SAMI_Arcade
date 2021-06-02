@@ -1,3 +1,7 @@
+//Variables de fecha.
+var fecha = new Date();
+fecha.setTime(fecha.getTime()+1000*60*60*24*7);
+
 //Variables del canvas
 let canvas = document.getElementById("piano");
 let ctx = canvas.getContext("2d");
@@ -8,7 +12,7 @@ let vel;
 //Variable que nos permite saber si fallamos y detener la animacion.
 let fallo; 
 let colorito="black";
-
+let redondear; //Variable que nos permite redondear el puntaje.
 //AUDIO Y ARREGLO DE TECLAS RANDOM --------------------------------------------------------------------------------
 //Constantes de los audios.
 const CANCION = ["wetH", "rondo", "bumblebee"]; //Almacena el nombre de las canciones.
@@ -49,11 +53,62 @@ function inicializar (){
     tabla();
 }
 
+//Función que nos da el valor de la cookie
+function valCookie(nombreCookie,x) 
+{
+    let cookies = document.cookie;
+    let arrCookies=cookies.split("; ");
+
+    //Ciclo que nos separa cada valor en el nombre, y en el valor de la cookie y lo va asignando a un arreglo.
+    for(const valor of arrCookies)
+    {
+        //Separando el valor obtenido en 2, donde el indice 0 es el nombre de la cookie, y el 1 es el valor.
+        const cookie = valor.split('=');
+        //if que nos permite verificar si el nombre es el que buscamos.
+        if (cookie[0] === nombreCookie)
+        {
+            if(x==1)
+                return cookie[0];
+            else if(x == 2)
+                return cookie[1];
+        }
+    }
+    return null;
+}
+
+//Funcion que asigna el valor del puntaje a las cookies sin modificar lo demás.
+function cookieAlta(){
+    let cookieActiva = valCookie("activo", 2);
+    let stringCookie=valCookie(cookieActiva, 2);
+    let configPal = stringCookie.charAt(0);
+    let puntaje; 
+    if(stringCookie.length < 2)
+    {
+        puntaje = configPal.concat(redondear);
+        document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
+        alert("nunca ha jugado, el puntaje es:"+redondear);
+    }
+    else{
+        puntaje = stringCookie.substr(1);
+        if(puntaje > redondear){
+            puntaje = configPal.concat(puntaje);
+            document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
+            alert("cookie con puntaje más alto");
+        }
+        else{
+            puntaje = configPal.concat(redondear);
+            document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
+            alert("estableciste un nuevo record");
+        }
+    }
+    
+}
+
 //Funcion que permite desplegar el puntaje.
 function puntaje (aciertos, velocidad){
     velocidad *= 100;
     let puntos = $("#puntos");
-    let redondear = Math.round(velocidad+(aciertos*10));
+    redondear = Math.round(velocidad+(aciertos*10));
     puntos.text(redondear);
 }
 
@@ -61,6 +116,7 @@ function puntaje (aciertos, velocidad){
 function fin(){
     fallo=true;
     cancelAnimationFrame(animacion);
+    cookieAlta();
     audio = new Audio("../statics/media/piano_songs/fallo.mp3");
     audio.play();
     setTimeout(()=>{
@@ -182,6 +238,7 @@ function jugar(carril, flotante){
         //Si llegas al final, cancela la animacion y ejecuta la victoria.
         if(numAudio == TECLAS[songRand])
         {
+            cookieAlta();
             setTimeout(()=>{
                 cancelAnimationFrame(animacion);
                 reintentar.show();
