@@ -141,3 +141,15 @@ body{
   color:white;
   font-family:"m23";
 }
+#Regreso{
+  text-decoration: none;
+  text-align: center;
+  color:white;
+  font-family:"m23";
+  font-size:60px;
+  bottom: 75%;
+  display: none;
+}
+#Regreso:hover{
+  color: var(--naranja);
+}
