@@ -24,12 +24,12 @@ $(document).ready(()=>{
     //cuando ya existe la cookie le cambia el color  de fondo al que ya tenía antes
     function cambiarColor(){
         let colorAct = valCookie("activo", 2);
-        if(valCookie(colorAct, 2) == 'b')
+        if(valCookie(colorAct, 2).charAt(0) == 'b')
         {
             cookiePal = 'b';
             $("body").css("backgroundColor", "#d6d6d6"); 
         }
-        else if(valCookie(colorAct, 2) == 'n')
+        else if(valCookie(colorAct, 2).charAt(0) == 'n')
         {
             cookiePal='n';
         $("body").css("backgroundColor", "#242222");
