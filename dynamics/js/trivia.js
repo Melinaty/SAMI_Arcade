@@ -1,14 +1,65 @@
+//Variables de fecha.
+var fecha = new Date();
+fecha.setTime(fecha.getTime()+1000*60*60*24*7);
+
 //Con esta finción es para las pregunras aleatorias y las respuestas
 function aleatorio(num){
     var aleatorio= Math.floor(Math.random()* num);
     return aleatorio;
   }
   
-  function numRand(num){
-    var rand= Math.floor(Math.random()* num)+1;
-    return rand;
+function numRand(num){
+  var rand= Math.floor(Math.random()* num)+1;
+  return rand;
+}
+
+    //Función que nos da el valor de la cookie
+function valCookie(nombreCookie,x) 
+{
+  let cookies = document.cookie;
+  let arrCookies=cookies.split("; ");
+
+  //Ciclo que nos separa cada valor en el nombre, y en el valor de la cookie y lo va asignando a un arreglo.
+  for(const valor of arrCookies)
+  {
+    //Separando el valor obtenido en 2, donde el indice 0 es el nombre de la cookie, y el 1 es el valor.
+    const cookie = valor.split('=');
+    //if que nos permite verificar si el nombre es el que buscamos.
+    if (cookie[0] === nombreCookie)
+    {
+      if(x==1)
+        return cookie[0];
+      else if(x == 2)
+        return cookie[1];
+    }
   }
-  
+  return null;
+}
+
+//Funcion que asigna el valor del puntaje a las cookies sin modificar lo demás.
+function cookieAlta(){
+  let cookieActiva = valCookie("activo", 2);
+  let stringCookie = valCookie(cookieActiva, 2);
+  let configPal = stringCookie.charAt(0);
+  let puntaje; 
+  if(stringCookie.length < 2)
+  {
+    puntaje = configPal.concat(correcta);
+    document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
+  }
+  else{
+    puntaje = stringCookie.substr(1);
+    if(puntaje > correcta){
+      puntaje = configPal.concat(puntaje);
+      document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
+    }
+    else{
+      puntaje = configPal.concat(correcta);
+      document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
+    }
+  }
+}
+
   //Inicializar variables
   let ordResp1 = 0;
   let ordResp2 = 0;
@@ -38,7 +89,7 @@ function aleatorio(num){
       }
       else{
         clearInterval(tiempo);
-        console.log("fin del juego");
+        cookieAlta();
   
           document.getElementById("pregunta").style.display="none";
           document.getElementById("respuestas").style.display="none";
@@ -199,6 +250,7 @@ function aleatorio(num){
         }
         else{
           clearInterval(tiempo);
+          cookieAlta();
          document.getElementById("pregunta").style.display="none";
           document.getElementById("respuestas").style.display="none";
   
@@ -239,6 +291,7 @@ function aleatorio(num){
         }
         else{
           clearInterval(tiempo);
+          cookieAlta();
           document.getElementById("pregunta").style.display="none";
           document.getElementById("respuestas").style.display="none";
   
@@ -279,6 +332,7 @@ function aleatorio(num){
         }
         else{
           clearInterval(tiempo);
+          cookieAlta();
           document.getElementById("pregunta").style.display="none";
           document.getElementById("respuestas").style.display="none";
   
@@ -317,6 +371,7 @@ function aleatorio(num){
         }
         else{
           clearInterval(tiempo);
+          cookieAlta();
           document.getElementById("pregunta").style.display="none";
           document.getElementById("respuestas").style.display="none";
   
