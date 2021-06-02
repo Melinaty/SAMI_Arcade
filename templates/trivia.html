@@ -6,14 +6,15 @@
     <link rel="icon" href="../statics/img/icon/favicon.png" type="image/png">
     <title>Trivia</title>
     <link href="../statics/styles/trivia.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../statics/styles/basics.css">
   </head>
   <body>
     <input type="submit" id="inicio" value="iniciar">
     <div id="tiempo"></div>
-    <div id="resultsbue">Preguntas buenas: 
+    <div id="resultsbue"><h1>Preguntas buenas:</h1> 
      <div id="buenas"></div>
     </div><br><br>
-    <div id="resultsmal">Preguntas malas: 
+    <div id="resultsmal"><h1>Preguntas malas:</h1> 
      <div id="malas"></div>
     </div>
     <div id="pregunta"></div>
@@ -24,13 +25,16 @@
       <div id="res4" class="item"></div>
     </div>
     <div id="temae">
-      <label for="tema" id="vamos">¡Vamos, Escoge un tema para inicar!</label><br><br>
+      <label for="tema" id="vamos"><h1>¡Vamos, Escoge un tema para inicar!</h1></label><br><br>
         <select name="tema" id="tema">
           <option value="ocio">Ocio y Cultura</option>
           <option value="historia">Historia</option>
           <option value="mate">Matemáticas</option>
           <option value="C">Programación en lenguaje C</option>
         </select>
+    </div>
+    <div>
+      <a id="Regreso" href="../templates/games.html">REGRESAR</a>
     </div>
     <script src="../dynamics/js/trivia.js"></script>
   </body>

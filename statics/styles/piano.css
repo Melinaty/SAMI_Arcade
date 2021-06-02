@@ -1,20 +1,3 @@
-/*=fonts----------------------------------------------------------------------------------------------------------------*/
-@font-face {
-    font-family: "Happy";
-    src: url("../fonts/MilkyNice.otf");
-}
-@font-face {
-    font-family:"m23";
-    src: url("../fonts/m23.TTF");
-}
-@font-face {
-    font-family: "Shadow";
-    src: url("../fonts/Deep\ Shadow.ttf");
-}
-@font-face {
-    font-family: "Lobster";
-    src: url("../fonts/Lobster-Regular.ttf");
-}
 /*=body-------------------------------------------------------------------------------------------------------------*/
 body{
     margin: 0;

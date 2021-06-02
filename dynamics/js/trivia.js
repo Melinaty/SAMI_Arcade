@@ -51,7 +51,9 @@ function aleatorio(num){
   
           document.getElementById("buenas").innerHTML=correcta;
           document.getElementById("malas").innerHTML=mala;
-  
+
+          document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
   
       }
       console.log("Elimine el intervalo");
@@ -208,6 +210,9 @@ function aleatorio(num){
   
           document.getElementById("buenas").innerHTML=correcta;
           document.getElementById("malas").innerHTML=mala;
+
+          document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
   
         }
       })
@@ -245,7 +250,9 @@ function aleatorio(num){
   
           document.getElementById("buenas").innerHTML=correcta;
           document.getElementById("malas").innerHTML=mala;
-  
+          
+          document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
         }
       })
   
@@ -283,7 +290,9 @@ function aleatorio(num){
   
           document.getElementById("buenas").innerHTML=correcta;
           document.getElementById("malas").innerHTML=mala;
-  
+          
+          document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
         }
       })
   
@@ -319,6 +328,9 @@ function aleatorio(num){
   
           document.getElementById("buenas").innerHTML=correcta;
           document.getElementById("malas").innerHTML=mala;
+
+          document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
   
         }
       })
@@ -371,7 +383,7 @@ function aleatorio(num){
                   "¿Cuál de los siguientes premios es el intruso?",
                   "¿Cuál es el otro nombre de la nota musical do?",
                   "¿De qué país es el cantante Justin Biber?",
-                  "¿Cómo se les sama a las personas que practican el tiro con arco?",
+                  "¿Cómo se les llama a las personas que practican el tiro con arco?",
                   "En el futbol americano, ¿Cuántos puntos vale un Field Goal?",
                   "¿Cuál es el intruso?",
                   "¿Qué es la proa de un barco?",
