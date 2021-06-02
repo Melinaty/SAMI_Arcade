@@ -86,19 +86,16 @@ function cookieAlta(){
     {
         puntaje = configPal.concat(redondear);
         document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
-        alert("nunca ha jugado, el puntaje es:"+redondear);
     }
     else{
         puntaje = stringCookie.substr(1);
         if(puntaje > redondear){
             puntaje = configPal.concat(puntaje);
             document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
-            alert("cookie con puntaje más alto");
         }
         else{
             puntaje = configPal.concat(redondear);
             document.cookie=cookieActiva+"="+puntaje+"; expires="+fecha.toGMTString();
-            alert("estableciste un nuevo record");
         }
     }
     
