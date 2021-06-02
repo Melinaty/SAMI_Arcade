@@ -90,6 +90,22 @@ a{
 .esconder{
     z-index:2;
 }
+#imgpiano{
+    position: relative;
+    top:2%;
+    left: 25%;
+    width: 50%;
+    height: 95%;
+    cursor: pointer;
+}
+#imgtrivia{
+    position: relative;
+    top:2%;
+    left: 20%;
+    width: 60%;
+    height: 95%;
+    cursor: pointer;
+}
 
 /*=ADAPTABILIDAD
 ---------------------------------------------*/
