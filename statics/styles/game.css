@@ -70,6 +70,9 @@ a{
     background-color: var(--amarillo);
     color: black;
 }
+#cambiarUser{
+    background-color: var(--naranja);
+}
 #boton{
     background-color: var(--morado2);
     height: 61px;
