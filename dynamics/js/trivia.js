@@ -53,6 +53,7 @@ function aleatorio(num){
           document.getElementById("malas").innerHTML=mala;
 
           document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
   
       }
       console.log("Elimine el intervalo");
@@ -211,6 +212,7 @@ function aleatorio(num){
           document.getElementById("malas").innerHTML=mala;
 
           document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
   
         }
       })
@@ -250,6 +252,7 @@ function aleatorio(num){
           document.getElementById("malas").innerHTML=mala;
           
           document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
         }
       })
   
@@ -289,6 +292,7 @@ function aleatorio(num){
           document.getElementById("malas").innerHTML=mala;
           
           document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
         }
       })
   
@@ -326,6 +330,7 @@ function aleatorio(num){
           document.getElementById("malas").innerHTML=mala;
 
           document.getElementById("tiempo").style.display="none";
+          document.getElementById("Regreso").style.display="block";
   
         }
       })
