@@ -548,7 +548,7 @@ function aleatorio(num){
                   respuestas= [
                   ["Dennis Ritchie", "Bill Gates", "James Gosling", "Bjarne Stroustrup"],
                   ["var", "float", "char", "double"],
-                  ["\", "/g", "\\", "\s"],
+                  ["\", \"/g", "\\", "\s"],
                   ["Notación científica", "Formato hexadecimal", "Formato entero", "Carácter"],
                   ["scanf", "printf", "scanr", "printr"],
                   ["Vectores", "Matrices", "filas", "Estáticos"],
