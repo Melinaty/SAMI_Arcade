@@ -24,9 +24,10 @@ h2{
     padding-top: 5px;
     text-align: center;
 }
-#tabla1, #tabla2{
+#tabla1{
     background-color: var(--morado2);
     height: 500px;
+    height: max-content;
     width: 1100px;
     border-radius: 10px;
 }
@@ -66,7 +67,15 @@ h2{
     margin-top: 10px;
     border-radius: 8px;
 }
-
+.fechaP, .puntajeP, .usuarioP{
+    height: max-content;
+}
+p{
+    font-family: "m23";
+    font-size: 1em;
+    text-align: center;
+    color: azure;
+}
 #trivia{
     grid-column: 8;
     grid-row-start:12;

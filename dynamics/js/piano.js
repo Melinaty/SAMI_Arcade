@@ -2,6 +2,9 @@
 var fecha = new Date();
 fecha.setTime(fecha.getTime()+1000*60*60*24*7);
 
+var hoy = new Date();
+hoy.setTime(hoy.getTime());
+
 //Variables del canvas
 let canvas = document.getElementById("piano");
 let ctx = canvas.getContext("2d");
