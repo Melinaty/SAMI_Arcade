@@ -149,7 +149,7 @@ $(document).ready(()=>{
     });     
 
     btnAjust.click(()=>{
-        cambiarBtn.show();;
+        cambiarBtn.show();
     });
 
     iconAjust.click(()=>{
