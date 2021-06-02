@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Trivia</title>
+    <link href="../statics/styles/trivia.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <input type="submit" id="inicio" value="iniciar">
+    <div id="tiempo"></div>
+    <div id="resultsbue">Preguntas buenas: 
+     <div id="buenas"></div>
+    </div><br><br>
+    <div id="resultsmal">Preguntas malas: 
+     <div id="malas"></div>
+    </div>
+    <div id="pregunta"></div>
+    <div id="respuestas" class="container">
+      <div id="res1" class="item"></div>
+      <div id="res2" class="item"></div>
+      <div id="res3" class="item"></div>
+      <div id="res4" class="item"></div>
+    </div>
+    <div id="temae">
+      <label for="tema" id="vamos">¡Vamos, Escoge un tema para inicar!</label><br><br>
+        <select name="tema" id="tema">
+          <option value="ocio">Ocio y Cultura</option>
+          <option value="historia">Historia</option>
+          <option value="mate">Matemáticas</option>
+          <option value="C">Programación en lenguaje C</option>
+        </select>
+    </div>
+    <script src="../dynamics/js/trivia.js"></script>
+  </body>
+</html>
